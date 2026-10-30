@@ -1,0 +1,66 @@
+name: Validate Agent Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "VERSION"
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - ".github/pull_request_template.md"
+      - "README.md"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - ".codex-plugin/**"
+      - ".claude-plugin/**"
+      - ".workbuddy-plugin/**"
+      - "docs/**"
+      - "examples/**"
+      - "skills/**"
+      - "references/**"
+      - "schemas/**"
+      - "playbooks/**"
+      - "evals/**"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/validate-skills.yml"
+  pull_request:
+    paths:
+      - "VERSION"
+      - "CHANGELOG.md"
+      - "CONTRIBUTING.md"
+      - ".github/pull_request_template.md"
+      - "README.md"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - ".codex-plugin/**"
+      - ".claude-plugin/**"
+      - ".workbuddy-plugin/**"
+      - "docs/**"
+      - "examples/**"
+      - "skills/**"
+      - "references/**"
+      - "schemas/**"
+      - "playbooks/**"
+      - "evals/**"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/validate-skills.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Run repository unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate repository skills
+        run: python scripts/validate_skills.py .
+      - name: Validate eval fixture contracts
+        run: python scripts/validate_evals.py .

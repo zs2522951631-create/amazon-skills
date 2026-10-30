@@ -1,0 +1,24 @@
+{
+  "name": "amazon-ads-skills",
+  "version": "2.15.0",
+  "description": "Amazon Ads AI Agent skills, playbooks, measurement-lineage projection and effectiveness eval tooling for auditing, monitoring, causal diagnosis, growth discovery, experiments, post-change evaluation, optimization memory and guarded optimization.",
+  "author": {
+    "name": "zerlinpi",
+    "url": "https://github.com/zerlinpi"
+  },
+  "homepage": "https://github.com/zerlinpi/amazon-ads-skills",
+  "repository": "https://github.com/zerlinpi/amazon-ads-skills",
+  "license": "MIT",
+  "keywords": [
+    "amazon-ads",
+    "amazon-ppc",
+    "advertising",
+    "agent-skills",
+    "weekly-review",
+    "experimentation",
+    "optimization-memory",
+    "evals",
+    "historical-replay"
+  ],
+  "skills": "./skills/"
+}

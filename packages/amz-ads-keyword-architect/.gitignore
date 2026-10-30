@@ -1,0 +1,29 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ---- Skill 运行产物（不应入库）----
+# 脚本生成的工作簿与飞书中转 JSON
+*.xlsx
+*.sheets.json
+# 临时拓词/聚类/架构中间 CSV（示例数据请显式 -f 添加）
+拓词总表.csv
+clusters.csv
+architecture.csv
+voc.csv
+
+# ---- OS / 编辑器 ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

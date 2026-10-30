@@ -1,0 +1,17 @@
+# Local Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Credentials and private working data
+.env
+.env.local
+.env.production
+private-test-data/
+private_execution/
+
+# Generated analysis output
+outputs/
+reports/
