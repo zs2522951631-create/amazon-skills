@@ -1,0 +1,3 @@
+# Preserve the original bytes of vendored sources on every platform.
+# This keeps sources.lock.json Git blob SHA checks valid on Windows.
+packages/** -text
